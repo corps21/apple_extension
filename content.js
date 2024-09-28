@@ -1,5 +1,5 @@
 const getSongList = () => {
-  setTimeout(() => {
+  setTimeout(async () => {
     const list = document.querySelectorAll(
       ".songs-list-row__song-name-wrapper"
     );
@@ -13,8 +13,13 @@ const getSongList = () => {
         songs.push(songInfo)
     })
 
+    
+    // const response = await chrome.runtime.sendMessage(songs)
+    // if(response) console.log("songs sent successfully")
+    
     console.log(list, list.length);
     console.log(songs)
+    console.log( await chrome.runtime.sendMessage(songs) )
   }, 1000);
 };
 
