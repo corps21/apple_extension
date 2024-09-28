@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: 4rem 0;
+}
+
+ul,li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: 0;
+   list-style: none;
+}
+
+.flow_content > * + * {
+    margin-top: 1rem;
+}

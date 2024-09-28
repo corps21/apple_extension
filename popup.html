@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="popup.css">
 </head>
-<body>
-    Here are you songs 
-    <ul class="song_list">
 
-    </ul>
-    <script src="popup.js"></script>
+<body>
+    <main>
+        <h1>Songs found in the playlist</h1>
+        <ul class="song_list flow_content">
+        </ul>
+
+        <button class="scan_button">Scan for songs in the playlist</button>
+    </main>
+    <script type="module" src="utils/index.js"></script>
+    <script type="module" src="popup.js"></script>
 </body>
+
 </html>
