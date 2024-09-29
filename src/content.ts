@@ -1,24 +1,25 @@
-import { Message, Response } from "./utils/index.js";
+import { Message, Response } from "../utils/index";
+import { songInfo } from "../utils/type";
 
 const getSongList = () => {
   setTimeout(async () => {
-    const songs = []
+    const songs : Array<songInfo> = []
     const list = document.querySelectorAll(
       ".songs-list-row__song-name-wrapper"
     );
 
 
     list.forEach((el) => {
-      const songInfo = {}
-      songInfo.song = el.querySelector(".songs-list-row__song-name").textContent;
-      songInfo.artist = el.querySelector(".songs-list-row__by-line > span").textContent
+      const songInfo:songInfo = {
+        song : el?.querySelector(".songs-list-row__song-name")?.textContent ?? "",
+        artist : el?.querySelector(".songs-list-row__by-line > span")?.textContent ?? "",
+      }
       songs.push(songInfo)
     })
 
-    // const response = await chrome.runtime.sendMessage(new Message("song_list", songs));
-
+    
     try {
-      const response = await chrome.runtime.sendMessage({ type: "song_list", data: songs });
+      const response = await chrome.runtime.sendMessage(new Message("song_list", songs));
       if (response.success) console.log("content loaded on popup successfully")
     } catch (error) {
       console.log(error)
@@ -27,10 +28,10 @@ const getSongList = () => {
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log(sender.tab ? "from a content script:" + sender.tab.ur : "from the extension")
+  console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension")
   if (request.type === "scan_button") {
     getSongList();
-    sendResponse(new Response(true))
+    sendResponse(new Response(true, {}))
   }
 });
 
