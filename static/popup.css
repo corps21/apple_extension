@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html,body {
@@ -15,9 +16,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    margin: 4rem 0;
+    padding: 4rem
+
 }
 
 ul,li {
@@ -26,6 +26,28 @@ ul,li {
    text-indent: 0;
    list-style-type: 0;
    list-style: none;
+}
+
+.invisible {
+    display: none;
+}
+
+.song_list {
+    margin: 2rem 0;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items > p {
+    width: 80%;
+    font-size: 1rem;
+}
+
+.title {
+    font-size: 2rem;
 }
 
 .flow_content > * + * {

@@ -3,11 +3,6 @@ import { songInfo } from "../utils/type";
 
 const getSongList = async () => {
 
-  // setTimeout(async () => {
-
-  // },1000)
-
-
   const songs : songInfo[] = [];
   const list = document.querySelectorAll(
     ".songs-list-row__song-name-wrapper"
@@ -21,13 +16,13 @@ const getSongList = async () => {
     songs.push(songInfo)
   })
 
-  
   try {
     const response = await chrome.runtime.sendMessage(new Message("update_list", songs));
     if (response.success) console.log("content loaded on popup successfully")
   } catch (error) {
     console.log(error)
   }
+  
 };
 
 chrome.runtime.onMessage.addListener(
