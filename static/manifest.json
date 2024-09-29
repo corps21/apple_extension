@@ -3,6 +3,7 @@
     "name": "Apple Music Playlist",
     "description": "Base Level Extension",
     "version": "1.0",
+    "permissions": [],
     "content_scripts": [
         {
           "js": ["content.js"],

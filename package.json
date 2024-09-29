@@ -4,7 +4,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --config webpack.prod.ts",
+    "build": "webpack --watch --config webpack.prod.ts",
     "start": "webpack --watch --config webpack.dev.ts"
   },
   "devDependencies": {

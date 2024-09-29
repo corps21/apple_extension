@@ -27,7 +27,7 @@ const config: Configuration = {
         clean: true
     },
     plugins: [
-        new CopyWebpackPlugin({patterns: [{from: "static", to: "static"}]})
+        new CopyWebpackPlugin({patterns: [{from: "static"}]})
     ]
 }
 
